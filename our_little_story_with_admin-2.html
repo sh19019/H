@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff3f7">
+<title>Our Little Story ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+:root{--pink:#e64298;--pink2:#f7c5dc;--ink:#252b3b;--muted:#89909e;--paper:#fff;--bg:#fff5f8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',sans-serif;min-height:100vh}
+button,input,textarea{font:inherit}button{cursor:pointer;border:0}
+.hidden{display:none!important}
+.top{max-width:760px;margin:auto;padding:25px 20px 12px;display:flex;justify-content:space-between;align-items:center}
+.brand{font:800 17px Poppins;color:var(--pink);letter-spacing:2px}.pill{background:#fff;border:1px solid #f6e4ec;border-radius:30px;padding:7px 14px;color:var(--pink);font-size:12px}
+main{max-width:760px;margin:auto;padding:12px 18px 55px}
+.card{background:rgba(255,255,255,.88);border:1px solid #f7eaf0;border-radius:25px;padding:22px;margin:16px 0;box-shadow:0 3px 0 rgba(214,153,181,.08)}
+.eyebrow{color:#dc83b0;font-size:11px;font-weight:700;letter-spacing:.5px;text-align:center}
+h2{font-size:21px;text-align:center;margin:3px 0 12px}p{color:var(--muted);font-size:13px;line-height:1.9}
+.moments{display:flex;gap:12px;overflow-x:auto;padding:6px 0 4px;scrollbar-width:thin}
+.memory{flex:0 0 190px;height:245px;border-radius:18px;overflow:hidden;position:relative;background:#f5dce8}
+.memory img{width:100%;height:100%;object-fit:cover}.memory:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+.memory .caption{position:absolute;z-index:1;bottom:13px;right:13px;left:12px;color:white;font-weight:700;font-size:14px}
+.letter{background:#fff0f7;border:1px solid #f6dce9;border-radius:18px;padding:22px;text-align:center;min-height:135px}
+.heart{width:58px;height:58px;border-radius:50%;background:var(--pink);color:#fff;font-size:27px;box-shadow:0 4px 10px #e6429840}
+#letterText{white-space:pre-wrap;color:#9b4b78;margin-top:15px}
+.music{background:#111a2e;color:white;border-radius:17px;padding:15px;display:flex;gap:13px;align-items:center}
+.music .disc{width:58px;height:58px;border-radius:13px;background:linear-gradient(135deg,#f6b2d2,#7d456e);display:grid;place-items:center;font-size:25px;flex-shrink:0}
+.music .details{min-width:0;flex:1}.music strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px}.music small{color:#aab2c5;font-size:11px}
+.music button{background:var(--pink);color:white;border-radius:50%;width:42px;height:42px;font-size:18px}
+audio{width:100%;margin-top:12px}
+.counter{text-align:center}.days{font:800 44px Poppins;color:#bb36a1;margin:8px 0 0}.days-label{font:700 12px Poppins;color:#687080}
+.timegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.timebox{background:#fff4f9;border-radius:15px;padding:12px 5px}.timebox b{font:700 18px Poppins}.timebox small{display:block;color:#a4a0aa;font-size:10px;margin-top:4px}
+footer{text-align:center;padding:15px;color:#c47ba2}
+.login{min-height:85vh;display:grid;place-items:center;padding:20px}
+.loginbox{width:min(100%,380px);background:white;border-radius:26px;padding:30px 24px;text-align:center;box-shadow:0 8px 30px #c77e9b1c}
+.loginbox .symbol{font-size:42px;color:var(--pink)}.loginbox input,.field{width:100%;border:1px solid #f0dce6;background:#fffafd;border-radius:13px;padding:12px 14px;outline:none;margin:7px 0;color:var(--ink)}
+.primary{background:var(--pink);color:#fff;border-radius:13px;padding:12px 18px;font-weight:700;width:100%;margin-top:9px}
+.secondary{background:#fff0f7;color:#c13c86;border:1px solid #f4d9e7;border-radius:12px;padding:10px 14px;font-weight:700}
+.admin-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.admin-section{border-top:1px solid #f4e5ec;padding-top:16px;margin-top:16px}
+.admin-section h3{font-size:15px;margin:0 0 8px}
+label{font-size:12px;color:#6d7180;font-weight:700;display:block;margin-top:10px}
+textarea{width:100%;min-height:90px;resize:vertical;border:1px solid #f0dce6;background:#fffafd;border-radius:13px;padding:12px;outline:none}
+.rowbtn{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.rowbtn button{flex:1}
+.smallnote{font-size:11px;color:#999;line-height:1.8}
+.photo-item{display:flex;align-items:center;gap:10px;border:1px solid #f5e5ed;border-radius:12px;padding:7px;margin-top:7px}
+.photo-item img{width:48px;height:48px;object-fit:cover;border-radius:9px}.photo-item span{flex:1;font-size:12px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#252b3b;color:white;padding:10px 17px;border-radius:20px;font-size:12px;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1}
+@media(max-width:420px){.memory{flex-basis:180px;height:230px}.card{padding:19px}.top{padding-top:18px}}
+</style>
+</head>
+<body>
+<div id="loginView" class="login">
+ <div class="loginbox">
+  <div class="symbol">♡</div><div class="brand">A LITTLE SURPRISE</div>
+  <h2 id="loginTitle">مكان خاص لينا</h2><p id="loginHint">اكتب كلمة السر عشان تفتح الحكاية</p>
+  <input id="passwordInput" type="password" inputmode="numeric" placeholder="Password" autocomplete="off">
+  <button class="primary" id="enterBtn">افتح المفاجأة ♡</button>
+  <p class="smallnote">كل لحظة حلوة ليها حكاية.</p>
+ </div>
+</div>
+<div id="siteView" class="hidden">
+ <header class="top"><span class="pill">ذكرياتنا ♡</span><span class="brand" id="siteBrand">REMAG.SITE</span><button class="pill" id="soundToggle" aria-label="تشغيل أو إيقاف الموسيقى">♫</button></header>
+ <main>
+  <section class="card">
+   <div class="eyebrow" id="momentsEyebrow">ذكرياتنا</div><div style="display:flex;justify-content:space-between;align-items:center"><h2 id="momentsTitle" style="text-align:right">Our moments</h2><span class="pill" id="photoCount">00</span></div>
+   <p id="momentsHint">Swipe, drag or use the touch to open a moment</p>
+   <div class="moments" id="moments"></div>
+  </section>
+  <section class="card">
+   <div class="eyebrow">A PRIVATE NOTE</div><h2 id="letterHeading">A letter for you</h2>
+   <div class="letter"><button class="heart" id="openLetter">♥</button><div id="letterPrompt" style="color:#c75b91;font-size:12px;margin-top:10px">Click to open your private letter 💌</div><div id="letterText" class="hidden"></div></div>
+  </section>
+  <section class="card">
+   <div class="eyebrow">OUR SOUNDTRACK</div><h2 id="musicHeading">A song for this story</h2>
+   <div class="music"><div class="disc">♫</div><div class="details"><strong id="songName">أغنيتنا المفضلة</strong><small id="songArtist">A song just for us</small></div><button id="playBtn">▶</button></div>
+   <audio id="audioPlayer" controls class="hidden"></audio>
+   <a id="spotifyLink" class="secondary hidden" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-top:10px">Open song on Spotify ↗</a>
+  </section>
+  <section class="card counter">
+   <div class="eyebrow">EVERY MOMENT OF OUR STORY</div><p id="counterCaption" style="margin:2px 0">Time since our special story began</p>
+   <div class="days" id="days">0</div><div class="days-label">DAYS</div>
+   <div class="timegrid"><div class="timebox"><b id="hours">00</b><small>HOURS</small></div><div class="timebox"><b id="minutes">00</b><small>MINUTES</small></div><div class="timebox"><b id="seconds">00</b><small>SECONDS</small></div></div>
+  </section>
+  <footer><div class="brand" id="footerBrand">REMAG</div><p id="footerText">A collection of small moments we never want to lose.</p></footer>
+ </main>
+</div>
+<div id="adminView" class="hidden">
+ <header class="top"><span class="pill">لوحة التحكم</span><span class="brand">ADMIN PANEL</span><button class="pill" id="backToSite">عرض الموقع</button></header>
+ <main>
+  <section class="card">
+   <div class="admin-head"><div><div class="eyebrow" style="text-align:right">YOUR WEBSITE</div><h2 style="text-align:right;margin:0">تعديل محتوى الموقع</h2></div><button class="secondary" id="saveBtn">حفظ التعديلات</button></div>
+   <p>عدّل الكلام والصور والأغنية من هنا. التغييرات بتتحفظ على نفس المتصفح والجهاز.</p>
+   <div class="admin-section">
+    <h3>١. العناوين والكلام</h3>
+    <label>اسم الموقع / اللوجو</label><input class="field" id="brandInput">
+    <label>عنوان قسم الذكريات</label><input class="field" id="momentsTitleInput">
+    <label>وصف قسم الذكريات</label><input class="field" id="momentsHintInput">
+    <label>عنوان الرسالة</label><input class="field" id="letterHeadingInput">
+    <label>الجملة قبل فتح الرسالة</label><input class="field" id="letterPromptInput">
+    <label>نص الرسالة</label><textarea id="letterTextInput"></textarea>
+    <label>عنوان قسم الأغنية</label><input class="field" id="musicHeadingInput">
+    <label>اسم الأغنية</label><input class="field" id="songNameInput">
+    <label>اسم الفنان / وصف صغير</label><input class="field" id="songArtistInput">
+    <label>رابط Spotify (اختياري)</label><input class="field" id="spotifyInput" placeholder="https://open.spotify.com/track/...">
+    <label>الجملة الخاصة بعداد الوقت</label><input class="field" id="counterCaptionInput">
+    <label>تاريخ بداية الحكاية</label><input class="field" id="startDateInput" type="date">
+    <label>الكلام أسفل الموقع</label><input class="field" id="footerTextInput">
+   </div>
+   <div class="admin-section">
+    <h3>٢. إضافة الصور للذكريات</h3>
+    <label>اختار صورة أو أكثر من جهازك</label><input class="field" id="photoUpload" type="file" accept="image/*" multiple>
+    <div id="photoList"></div>
+    <p class="smallnote">تقدر تضيف صور كتير، وتحذف أي صورة من القائمة. اختار صور بحجم مناسب عشان مساحة المتصفح.</p>
+   </div>
+   <div class="admin-section">
+    <h3>٣. إضافة الموسيقى</h3>
+    <label>ارفع ملف أغنية من جهازك (MP3 أو M4A أو WAV)</label><input class="field" id="musicUpload" type="file" accept="audio/*">
+    <div id="audioStatus" class="smallnote">لم يتم رفع ملف صوتي بعد.</div>
+   </div>
+   <div class="rowbtn"><button class="primary" id="saveBtn2">حفظ كل التعديلات</button><button class="secondary" id="resetBtn">استعادة الإعدادات الافتراضية</button></div>
+   <p class="smallnote">تنبيه: كلمة مرور لوحة التحكم 1910 وباسورد الزائر 2509 موجودان داخل كود الصفحة؛ ده مناسب لمفاجأة شخصية بسيطة، لكنه مش نظام حماية حقيقي لو نشرت الموقع للعامة.</p>
+  </section>
+ </main>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+const VISITOR_PASSWORD='2509', ADMIN_PASSWORD='1910';
+const defaults={
+ brand:'REMAG.SITE',momentsTitle:'Our moments',momentsHint:'Swipe, drag or use the touch to open a moment',
+ letterHeading:'A letter for you',letterPrompt:'Click to open your private letter 💌',
+ letterText:'كل لحظة معاكي ليها معنى مختلف.\\nشكراً على كل ذكرى حلوة، ويا رب نفضل نصنع ذكريات أجمل وأجمل. ❤️',
+ musicHeading:'A song for this story',songName:'أغنيتنا المفضلة',songArtist:'A song just for us',spotify:'',
+ counterCaption:'Time since our special story began',startDate:'2025-10-08',
+ footerText:'A collection of small moments we never want to lose.',photos:[]
+};
+let data={...defaults,photos:[]},audioBlob=null,audioUrl=null,db;
+const $=id=>document.getElementById(id);
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2200)}
+function openDB(){return new Promise((resolve,reject)=>{const req=indexedDB.open('OurLittleStoryDB',1);req.onupgradeneeded=()=>{req.result.createObjectStore('assets')};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+function dbPut(key,value){return new Promise((res,rej)=>{const tx=db.transaction('assets','readwrite');tx.objectStore('assets').put(value,key);tx.oncomplete=res;tx.onerror=()=>rej(tx.error)})}
+function dbGet(key){return new Promise((res,rej)=>{const tx=db.transaction('assets','readonly');const r=tx.objectStore('assets').get(key);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+function dbDelete(key){return new Promise(res=>{const tx=db.transaction('assets','readwrite');tx.objectStore('assets').delete(key);tx.oncomplete=res})}
+function loadData(){try{const saved=JSON.parse(localStorage.getItem('ourStorySettings')||'{}');data={...defaults,...saved,photos:saved.photos||[]}}catch(e){data={...defaults}}}
+function show(view){['loginView','siteView','adminView'].forEach(id=>$(id).classList.toggle('hidden',id!==view))}
+$('enterBtn').onclick=async()=>{const p=$('passwordInput').value;if(p===ADMIN_PASSWORD){loadData();await fillAdmin();show('adminView')}else if(p===VISITOR_PASSWORD){loadData();await renderSite();show('siteView')}else{toast('كلمة السر غير صحيحة');$('passwordInput').value=''}};
+$('passwordInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('enterBtn').click()});
+$('backToSite').onclick=async()=>{await renderSite();show('siteView')};
+$('soundToggle').onclick=()=>toggleAudio();
+$('playBtn').onclick=()=>toggleAudio();
+$('openLetter').onclick=()=>{$('letterText').classList.toggle('hidden');$('letterPrompt').classList.toggle('hidden')};
+function toggleAudio(){const a=$('audioPlayer');if(a.classList.contains('hidden')){if(data.spotify){window.open(data.spotify,'_blank','noopener');return}toast('ارفع ملف أغنية من لوحة التحكم أولاً');return}if(a.paused)a.play().catch(()=>toast('اضغط تشغيل للسماح بتشغيل الأغنية'));else a.pause()}
+async function renderSite(){
+ loadData();$('siteBrand').textContent=data.brand;$('footerBrand').textContent=data.brand.replace('.SITE','');
+ $('momentsTitle').textContent=data.momentsTitle;$('momentsHint').textContent=data.momentsHint;
+ $('letterHeading').textContent=data.letterHeading;$('letterPrompt').textContent=data.letterPrompt;$('letterText').textContent=data.letterText;
+ $('musicHeading').textContent=data.musicHeading;$('songName').textContent=data.songName;$('songArtist').textContent=data.songArtist;
+ $('counterCaption').textContent=data.counterCaption;$('footerText').textContent=data.footerText;
+ $('spotifyLink').classList.toggle('hidden',!data.spotify);$('spotifyLink').href=data.spotify||'#';
+ const holder=$('moments');holder.innerHTML='';
+ for(let i=0;i<data.photos.length;i++){const ph=data.photos[i],blob=await dbGet(ph.key);if(!blob)continue;const url=URL.createObjectURL(blob);const el=document.createElement('div');el.className='memory';const img=document.createElement('img');img.src=url;img.alt=ph.caption||'Memory';const cap=document.createElement('div');cap.className='caption';cap.textContent=ph.caption||`ذكرى رقم ${String(i+1).padStart(2,'0')} ♡`;el.append(img,cap);holder.append(el)}
+ $('photoCount').textContent=String(data.photos.length).padStart(2,'0');
+ const savedAudio=await dbGet('music');const a=$('audioPlayer');if(audioUrl)URL.revokeObjectURL(audioUrl);audioUrl=savedAudio?URL.createObjectURL(savedAudio):null;
+ if(audioUrl){a.src=audioUrl;a.classList.remove('hidden')}else{a.removeAttribute('src');a.classList.add('hidden')}
+ updateCounter();
+}
+function updateCounter(){const start=new Date((data.startDate||defaults.startDate)+'T00:00:00');let diff=Math.max(0,Date.now()-start.getTime());const day=Math.floor(diff/86400000);diff%=86400000;$('days').textContent=day.toLocaleString('en-US');$('hours').textContent=String(Math.floor(diff/3600000)).padStart(2,'0');diff%=3600000;$('minutes').textContent=String(Math.floor(diff/60000)).padStart(2,'0');$('seconds').textContent=String(Math.floor(diff/1000)%60).padStart(2,'0')}
+setInterval(()=>{if(!$('siteView').classList.contains('hidden'))updateCounter()},1000);
+const fields={brand:'brandInput',momentsTitle:'momentsTitleInput',momentsHint:'momentsHintInput',letterHeading:'letterHeadingInput',letterPrompt:'letterPromptInput',letterText:'letterTextInput',musicHeading:'musicHeadingInput',songName:'songNameInput',songArtist:'songArtistInput',spotify:'spotifyInput',counterCaption:'counterCaptionInput',startDate:'startDateInput',footerText:'footerTextInput'};
+async function fillAdmin(){loadData();Object.entries(fields).forEach(([k,id])=>$(id).value=data[k]??'');const au=await dbGet('music');$('audioStatus').textContent=au?'يوجد ملف موسيقى محفوظ. يمكنك رفع ملف آخر لاستبداله.':'لم يتم رفع ملف صوتي بعد.';renderPhotoList()}
+function renderPhotoList(){const box=$('photoList');box.innerHTML='';data.photos.forEach((ph,i)=>{const row=document.createElement('div');row.className='photo-item';const img=document.createElement('img');dbGet(ph.key).then(b=>{if(b)img.src=URL.createObjectURL(b)});const span=document.createElement('span');span.textContent=ph.caption||`صورة ${i+1}`;const del=document.createElement('button');del.className='secondary';del.textContent='حذف';del.onclick=async()=>{await dbDelete(ph.key);data.photos.splice(i,1);saveSettings();renderPhotoList()};row.append(img,span,del);box.append(row)})}
+async function saveAll(){Object.entries(fields).forEach(([k,id])=>data[k]=$(id).value);if(data.spotify&&!/^https:\/\/(open\.)?spotify\.com\//i.test(data.spotify)){toast('رابط Spotify غير صحيح');return}saveSettings();await renderSite();toast('تم حفظ التعديلات بنجاح ♡')}
+function saveSettings(){localStorage.setItem('ourStorySettings',JSON.stringify(data))}
+$('saveBtn').onclick=saveAll;$('saveBtn2').onclick=saveAll;
+$('photoUpload').onchange=async e=>{for(const file of e.target.files){if(!file.type.startsWith('image/'))continue;const key='photo_'+Date.now()+'_'+Math.random().toString(36).slice(2);await dbPut(key,file);data.photos.push({key,caption:file.name.replace(/\.[^.]+$/,'')})}renderPhotoList();toast('تمت إضافة الصور، اضغط حفظ التعديلات');e.target.value=''};
+$('musicUpload').onchange=async e=>{const file=e.target.files[0];if(!file)return;if(!file.type.startsWith('audio/')){toast('اختار ملف صوتي');return}await dbPut('music',file);$('audioStatus').textContent='تم رفع: '+file.name;toast('تم رفع الأغنية بنجاح');e.target.value=''};
+$('resetBtn').onclick=async()=>{if(!confirm('متأكد إنك عايز ترجع الإعدادات الافتراضية؟'))return;for(const ph of data.photos)await dbDelete(ph.key);await dbDelete('music');data={...defaults,photos:[]};saveSettings();await fillAdmin();toast('تمت استعادة الإعدادات')};
+(async()=>{try{db=await openDB();}catch(e){toast('المتصفح لا يدعم التخزين المطلوب')}})();
+</script>
+</body>
+</html>
